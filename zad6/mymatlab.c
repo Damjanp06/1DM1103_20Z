@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
             fprintf(h, "%f", norm(mac_A));
             fclose(f);
             fclose(h);
+            zwolnij(mac_A);
         }
         else
         {
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
             mac_A = wczytaj(f);
             printf("%f\n", norm(mac_A));
             fclose(f);
+            zwolnij(mac_A);
         }
     }
     if(strcmp(argv[1], "multiply") == 0)
@@ -38,6 +40,7 @@ int main(int argc, char *argv[])
             zapisz(h, multiply(mac_A, atof(argv[3])));
             fclose(h);
             fclose(f);
+            zwolnij(mac_A);
         }
         else
         {
@@ -47,6 +50,7 @@ int main(int argc, char *argv[])
             mac_A = wczytaj(f);
             wypisz(multiply(mac_A, atof(argv[3])));
             fclose(f);
+            zwolnij(mac_A);
         }
     }
     if(strcmp(argv[1], "sum") == 0)
@@ -68,6 +72,8 @@ int main(int argc, char *argv[])
             fclose(h);
             fclose(g);
             fclose(f);
+            zwolnij(mac_A);
+            zwolnij(mac_x);
         }
         else
         {
@@ -84,6 +90,8 @@ int main(int argc, char *argv[])
                 printf("Nie mozna dodac tych dwoch macierzy. Ich wymiary nie sa takie same.\n"); 
             fclose(g);
             fclose(f);
+            zwolnij(mac_A);
+            zwolnij(mac_x);
         }
     }
     if(strcmp(argv[1], "subtract") == 0)
@@ -105,6 +113,8 @@ int main(int argc, char *argv[])
             fclose(h);
             fclose(g);
             fclose(f);
+            zwolnij(mac_A);
+            zwolnij(mac_x);
         }
         else
         {
@@ -121,6 +131,8 @@ int main(int argc, char *argv[])
                 printf("Nie mozna odjac tych dwoch macierzy. Ich wymiary nie sa takie same.\n");
             fclose(g);
             fclose(f);
+            zwolnij(mac_A);
+            zwolnij(mac_x);
         }
     }
     if(strcmp(argv[1], "prod") == 0)
@@ -139,6 +151,9 @@ int main(int argc, char *argv[])
             fclose(h);
             fclose(g);
             fclose(f);
+            zwolnij(mac_A);
+            zwolnij(mac_x);
+
         }
         else
         {
@@ -152,6 +167,9 @@ int main(int argc, char *argv[])
             wypisz(prod(mac_A, mac_x));
             fclose(g);
             fclose(f);
+            zwolnij(mac_A);
+            zwolnij(mac_x);
         }
     }
+
 }

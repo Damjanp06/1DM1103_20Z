@@ -15,6 +15,7 @@ struct macierz
 struct macierz *wczytaj(FILE *f);
 void wypisz(struct macierz *tab);
 void zapisz(FILE *h, struct macierz *tab);
+void zwolnij(struct macierz *m);
 
 
 #endif

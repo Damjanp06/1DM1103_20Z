@@ -47,3 +47,13 @@ void zapisz(FILE *h, struct macierz *tab)
         }
     }
 }
+
+void zwolnij(struct macierz *m)
+{
+    for(int i = 0; i < m->r; i++)
+    {
+        free(m->tab[i]);
+    }
+    free(m->tab);
+    free(m);
+}
