@@ -52,6 +52,7 @@ void zwolnij(struct macierz *m)
 {
     for(int i = 0; i < m->r; i++)
     {
+        //for(int j = 0; j < m->c; j++)
         free(m->tab[i]);
     }
     free(m->tab);
